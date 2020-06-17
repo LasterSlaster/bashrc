@@ -105,6 +105,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# bashrc function definitions
+if [ -e $HOME/.bash_functions ]; then
+    source $HOME/.bash_functions
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,3 +120,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Laster config
+export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
+export PATH="$PATH:$JAVA_HOME/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/laster/google-cloud-sdk/path.bash.inc' ]; then . '/home/laster/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/laster/google-cloud-sdk/completion.bash.inc' ]; then . '/home/laster/google-cloud-sdk/completion.bash.inc'; fi
